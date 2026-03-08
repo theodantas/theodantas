@@ -1,0 +1,802 @@
+/* ===========================
+   1. CUSTOM PROPERTIES
+   =========================== */
+:root {
+  /* Cores */
+  --bg-color: #0b0e14;
+  --bg-color-alt: #11151b;
+  --bg-color-mid: #161b22;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent-color: #005f8d;
+
+  /* Tipografia e Layout */
+  --font-main: 'Poppins', sans-serif;
+  --nav-height: 8.0rem;
+}
+
+/* ===========================
+   2. RESET GLOBAL
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-width: auto;
+  scrollbar-color: var(--text-secondary) var(--bg-color);
+}
+
+/* ===========================
+   3. CONFIGURAÇÕES BASE
+   =========================== */
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   4. ELEMENTOS PADRÃO
+   =========================== */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   5. NAVIGATION
+   =========================== */
+#navigation {
+  width: 100%;
+  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(11, 14, 20, 0.8);
+  backdrop-filter: blur(1.2rem);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+/* ===========================
+   5.1 NAVIGATION WRAPPER
+   =========================== */
+#navigation .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4.0rem;
+  max-width: 140.0rem;
+  margin: 0 auto;
+}
+
+/* ===========================
+   5.2 LOGO
+   =========================== */
+#navigation .logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+/* ===========================
+   5.3 NAV LINKS (CENTER)
+   =========================== */
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 3.0rem;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nav-links a {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-0.4rem);
+}
+
+/* ===========================
+   5.4 SOCIAL LINKS (RIGHT)
+   =========================== */
+.social-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+#navigation .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navigation .social-links svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+#navigation .social-links a:hover svg {
+  fill: var(--accent-color);
+  transform: translateY(-0.3rem);
+}
+
+/* ===========================
+   6. GLOBAL STRUCTURE
+   =========================== */
+section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: min(90rem, 90%);
+  margin-inline: auto;
+}
+
+/* ===========================
+7. SECTION HOME
+=========================== */
+#home {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+/* ===========================
+7.1 HOME WRAPPER
+=========================== */
+#home .wrapper {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 4.0rem;
+}
+
+/* ===========================
+7.2 HOME COLUMN A (TEXT)
+=========================== */
+#home .col-a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#home h4 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+#home h1 {
+  font-size: 5.2rem;
+  line-height: 1.2;
+  color: var(--headline);
+  margin-block: 0.8rem;
+}
+
+#home .typing {
+  font-size: 2.4rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  width: fit-content;
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* ===========================
+7.3 HOME COLUMN B (IMAGE)
+=========================== */
+#home .col-b {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#home .col-b img {
+  width: 100%;
+  max-width: 45rem;
+  height: auto;
+}
+
+/* ===========================
+8. SECTION ABOUT
+=========================== */
+#about {
+  background-color: var(--bg-color-alt);
+  padding-block: 10.0rem;
+}
+
+/* ===========================
+8.1 ABOUT WRAPPER
+=========================== */
+#about .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10.0rem;
+}
+
+/* ===========================
+8.2 ABOUT COLUMN B (IMAGE)
+=========================== */
+#about .col-b {
+  flex-shrink: 0;
+}
+
+#about .col-b img {
+  width: 30.0rem;
+  border-radius: 30.0rem;
+  object-fit: cover;
+}
+
+/* ===========================
+8.3 ABOUT COLUMN A (TEXT)
+=========================== */
+#about .col-a {
+  max-width: 55.0rem;
+}
+
+#about h2 {
+  font-size: 3.6rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+#about .content p {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* ===========================
+9. SECTION KNOWLEDGE
+=========================== */
+#knowledge {
+  padding-top: 10.0rem;
+  background-color: var(--bg-color);
+}
+
+/* ===========================
+9.1 KNOWLEDGE GRID
+=========================== */
+#knowledge .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+  justify-content: center;
+}
+
+/* ===========================
+9.2 KNOWLEDGE CARD
+=========================== */
+#knowledge .card {
+  background: var(--bg-color-alt);
+  padding: 2.8rem;
+  text-align: left;
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+  transition: 400ms;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* ===========================
+9.3 KNOWLEDGE TITLES
+=========================== */
+#knowledge h2 {
+  font-size: 3.6rem;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 600;
+  padding: 2.8rem;
+}
+
+#knowledge h3 {
+  font-size: 2.6rem;
+  color: var(--primary-color);
+}
+
+/* ===========================
+9.4 KNOWLEDGE CARD CONTENT
+=========================== */
+#knowledge .card img {
+  width: 7.0rem;
+  object-fit: contain;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+#knowledge .card p {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* ===========================
+   10. SECTION PROJECTS
+   =========================== */
+#projects {
+  padding-top: 10.0rem;
+  background-color: var(--bg-color);
+}
+
+#projects header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6.0rem;
+}
+
+#projects h2 {
+  font-size: 3.6rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* ===========================
+   10.1 PROJECTS GRID
+   =========================== */
+#projects .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+}
+
+/* ===========================
+   10.2 PROJECT CARD
+   =========================== */
+#projects .project-card {
+  position: relative;
+  background: var(--bg-color-alt);
+  padding: 2.8rem;
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+  transition: 400ms;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  text-align: center;
+  align-items: center;
+}
+
+/* ===========================
+   10.3 PROJECT OVERLAY
+   =========================== */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 20, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  z-index: 5;
+  transition: 400ms ease;
+}
+
+#projects .project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+#projects .project-card:hover {
+  background: var(--third-color);
+  transform: translateY(-0.5rem);
+}
+
+/* ===========================
+   10.4 SOCIAL CIRCLES
+   =========================== */
+.social-circle {
+  width: 5.2rem;
+  height: 5.2rem;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.social-circle svg {
+  width: 100%;
+  height: 100%;
+  fill: #000;
+  stroke: #000;
+}
+
+.social-circle:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.social-circle:hover svg {
+  fill: #fff;
+  stroke: #fff;
+}
+
+/* ===========================
+   10.5 PROJECT CARD CONTENT
+   =========================== */
+.project-image img {
+  width: 100%;
+  border-radius: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+#projects h3 {
+  font-size: 2.6rem;
+  color: var(--accent-color);
+}
+
+#projects p {
+  font-size: 1.6rem;
+  ;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.techs {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* ===========================
+11. SECTION CONTACT
+=========================== */
+#contact {
+  padding-block: 10.0rem;
+  background-color: var(--bg-color);
+}
+
+#contact header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4.0rem;
+  width: 100%;
+}
+
+#contact h2 {
+  font-size: 3.6rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ===========================
+11.1 CONTACT CONTENT
+=========================== */
+#contact .contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5.0rem;
+  width: 100%;
+  margin-top: 2.0rem;
+}
+
+#contact .contact-link {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: 300ms;
+  position: relative;
+}
+
+#contact .contact-link:hover {
+  color: var(--accent-color);
+  transform: translateY(-0.4rem);
+}
+
+/* ===========================
+11.2 NAV LINKS
+=========================== */
+.nav-links a {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-0.4rem);
+}
+
+/* ===========================
+12. FOOTER
+=========================== */
+#footer {
+  background-color: var(--bg-color-alt);
+  padding-block: 6.0rem;
+}
+
+#footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* ===========================
+12.1 FOOTER COLUMN A
+=========================== */
+#footer .col-a {
+  text-align: left;
+}
+
+#footer .logo {
+  display: inline-block;
+  font-size: 3.2rem;
+  color: var(--headline);
+  text-decoration: none;
+  margin-bottom: 2.4rem;
+  font-weight: 400;
+}
+
+#footer p {
+  font-size: 1.4rem;
+  color: var(--paragraph);
+  line-height: 1.6;
+}
+
+/* ===========================
+12.2 FOOTER SOCIAL LINKS
+=========================== */
+#footer .social-links {
+  display: flex;
+  gap: 2.4rem;
+  list-style: none;
+}
+
+#footer .social-links svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+#footer .social-links a:hover svg {
+  fill: var(--accent-color);
+  transform: translateY(-0.3rem);
+}
+
+/* ===========================
+   ANIMAÇÃO
+   =========================== */
+
+.reveal {
+  opacity: 0;
+  transition: all 2.0s ease;
+}
+
+/* Direita → Esquerda */
+.from-right {
+  transform: translateX(80px);
+}
+
+/* Esquerda → Direita */
+.from-left {
+  transform: translateX(-80px);
+}
+
+/* Cima → Baixo */
+.from-top {
+  transform: translateY(-80px);
+}
+
+/* Baixo → Cima */
+.from-bottom {
+  transform: translateY(80px);
+}
+
+/* Só aparecer */
+.fade-in {
+  transform: none;
+}
+
+/* Quando entra na tela */
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+/* ---------- DESKTOP (900px ou mais) ---------- */
+@media (min-width: 900px) {
+
+  #knowledge .card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: 50%;
+  }
+
+  #knowledge .card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-left: 50%;
+  }
+}
+
+/* ---------- TABLETS (950px até 651px) ---------- */
+@media (max-width: 950px) {
+  #projects .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #projects .project-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  #knowledge .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #knowledge .card:nth-child(4),
+  #knowledge .card:nth-child(5) {
+    margin-left: 0;
+    grid-column: auto;
+  }
+
+  #knowledge .card:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 850px) {
+  #about .wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 4.0rem;
+  }
+}
+
+@media (max-width: 800px) {
+
+  #about h2,
+  #projects h2,
+  #knowledge h2,
+  #contact h2 {
+    font-size: 3.0rem;
+  }
+
+  #about .content p {
+    text-align: justify;
+  }
+
+  #about,
+  #projects,
+  #knowledge {
+    padding-block: 3.0rem;
+  }
+
+  #projects header {
+    margin-bottom: 3.0rem;
+  }
+
+  #navigation .nav-links {
+    display: none;
+  }
+
+  #home .wrapper {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-top: 5rem;
+  }
+
+  #home .col-a {
+    align-items: center;
+  }
+
+  #home h1 {
+    font-size: 3.6rem;
+  }
+
+  #home .col-b {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  #footer .wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 4.0rem;
+  }
+
+  #footer p {
+    text-align: center;
+  }
+}
+
+/* ---------- MOBILE (650px ou menos) ---------- */
+@media (max-width: 650px) {
+  #projects .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reseta a ocupação de colunas no mobile */
+  #projects .project-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #contact .contact-content {
+    flex-direction: column;
+    gap: 2.0rem;
+  }
+
+  #knowledge .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reseta a ocupação de colunas no mobile */
+  #knowledge .card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+}

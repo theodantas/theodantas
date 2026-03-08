@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="Portfólio de Théo Dantas, estudante de Ciência e Tecnologia na UFABC com foco em Ciência da Computação e Dados." />
+  <meta name="author" content="Théo Dantas" />
+
+  <meta property="og:title" content="Théo Dantas | Portfólio" />
+  <meta property="og:description" content="Projetos, habilidades e trajetória na área de tecnologia." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23005f8d'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/main.js" defer></script>
+
+  <title>Théo Dantas | Portfólio</title>
+</head>
+
+<body>
+
+  <header>
+    <nav id="navigation">
+      <div class="wrapper">
+
+        <a class="logo" href="#home">theodantas</a>
+
+        <ul class="nav-links">
+          <li><a href="#about">Sobre mim</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#knowledge">Conhecimentos</a></li>
+          <li><a href="#contact">Fale comigo</a></li>
+        </ul>
+
+        <ul class="social-links">
+          <li>
+            <a href="https://github.com/theodantas" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/theodantas" target="_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/theoodantas_" target="_blank" title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="home" aria-labelledby="home-title">
+      <div class="wrapper">
+        <div class="reveal from-left col-a">
+          <header>
+            <h4>E aí pessoal</h4>
+            <h1 id="home-title">Sou o Théo,</h1>
+          </header>
+          <div class="content">
+            <p class="line typing">Estudante de Data Science.</p>
+          </div>
+        </div>
+
+        <div class="reveal from-right col-b">
+          <img src="./assets/images/dados.gif" alt="Ilustração de análise de dados" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrapper">
+        <div class="reveal from-right col-b">
+          <img src="./assets/images/theo.jpg" alt="Foto de Théo Dantas" loading="lazy" />
+        </div>
+
+        <div class="reveal from-right col-a">
+          <header>
+            <h2 id="about-title">Sobre mim</h2>
+          </header>
+          <div class="content">
+            <p>
+              Me chamo Théo Dantas, sou estudante do Bacharelado em
+              Ciência & Tecnologia pela UFABC, com direcionamento
+              para a área de Ciência da Computação e foco em Dados.
+              Tenho base sólida em lógica de programação, SQL e Python,
+              desenvolvendo projetos voltados à análise e estruturação de
+              dados para geração de soluções eficientes. Minha formação técnica
+              em Desenvolvimento de Sistemas fortaleceu minha visão analítica e
+              estruturada para resolver problemas. Busco me aprofundar na
+              área de Dados, onde pretendo evoluir tecnicamente e gerar
+              impacto através de soluções orientadas por informação.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="wrapper">
+        <header>
+          <h2 id="projects-title" class="reveal from-bottom">Projetos</h2>
+        </header>
+
+        <div class="content cards reveal from-bottom">
+          <article class="card project-card">
+            <div class="project-overlay">
+              <a href="https://github.com/theodantas/protech-health" target="_blank" class="social-circle"
+                title="GitHub">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+              <a href="https://theodantas.github.io/protech-health" target="_blank" class="social-circle"
+                title="Ver Projeto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+            <div class="project-image">
+              <img src="./assets/images/protech-health.gif" alt="Capa do Projeto Protech Health">
+            </div>
+            <h3>ProTech Health</h3>
+            <p>Página web desenvolvida para apresentar o aplicativo SafeBite.</p>
+            <span class="techs">HTML – CSS – JS</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-overlay">
+              <a href="https://github.com/theodantas/blendlang" target="_blank" class="social-circle"><svg viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg></a>
+              <a href="https://blendlang.onrender.com" target="_blank" class="social-circle"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg></a>
+            </div>
+            <div class="project-image">
+              <img src="./assets/images/blendlang.gif" alt="Capa do Projeto BlendLang">
+            </div>
+            <h3>BlendLang</h3>
+            <p>Gerador de frases misturando português e inglês para aprendizado.</p>
+            <span class="techs">Python - Flask - Google Sheets API</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-overlay">
+              <a href="https://github.com/theodantas/quizes" target="_blank" class="social-circle"><svg
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg></a>
+              <a href="https://theodantas.github.io/quizes" target="_blank" class="social-circle"><svg
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg></a>
+            </div>
+            <div class="project-image">
+              <img src="./assets/images/quizes.gif" alt="Capa do Quizes">
+            </div>
+            <h3>Quizes</h3>
+            <p>Trabalho acadêmicos sendo um site de quizes interativo.</p>
+            <span class="techs">HTML – CSS – JS</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="knowledge">
+      <div class="wrapper">
+        <header>
+          <h2 id="knowledge-title" class="reveal from-top">Conhecimentos</h2>
+        </header>
+        <div class="content reveal from-left">
+          <div class="cards">
+
+            <article class="card">
+              <img src="./assets/images/html.png" alt="Logo do HTML5." />
+              <h3>HTML5</h3>
+              <p>HTML5 é uma linguagem de marcação de hipertexto, responsável por estruturar o conteúdo de uma página
+                web. Ele organiza textos, imagens, links e seções, definindo a base e a hierarquia das informações
+                exibidas no navegador.</p>
+            </article>
+
+            <article class="card">
+              <img src="./assets/images/css.png" alt="Logo do CSS3." />
+              <h3>CSS3</h3>
+              <p>CSS3 é uma linguagem de estilo usada para a parte visual. Ele controla cores, fontes, espaçamentos,
+                layouts e animações, permitindo criar um design moderno e responsivo.</p>
+            </article>
+
+            <article class="card">
+              <img src="./assets/images/js.png" alt="Logo do Javascript." />
+              <h3>JavaScript</h3>
+              <p>JavaScript é uma linguagem de programação que adiciona interatividade às páginas web, sendo possível
+                criar efeitos, validações, atualizações dinâmicas e tornar a experiência do usuário mais funcional.</p>
+            </article>
+
+            <article class="card">
+              <img src="./assets/images/mysql.png" alt="Logo do MySQL." />
+              <h3>MySQL</h3>
+              <p>MySQL é um sistema de gerenciamento de banco de dados relacional usado para armazenar, organizar e
+                consultar informações. Ele permite trabalhar com dados de forma estruturada usando SQL.</p>
+            </article>
+
+            <article class="card">
+              <img src="./assets/images/python.png" alt="Logo do Python." />
+              <h3>Python</h3>
+              <p>Python é uma linguagem de programação simples e fácil de aprender, usada para criar sites, sistemas,
+                automações, jogos e aplicações de inteligência artificial, sendo muito popular por sua praticidade e
+                grande quantidade de bibliotecas disponíveis.</p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrapper reveal from-top">
+        <header>
+          <h2 id="contact-title">Fale comigo</h2>
+        </header>
+
+        <div class="contact-content">
+          <a class="contact-link" href="mailto:theoalvesdantas2@gmail.com">
+            theoalvesdantas2@gmail.com
+          </a>
+
+          <a class="contact-link" target="_blank" href="./assets/curriculo-theo.pdf" download>
+            Baixe meu currículo
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <div class="wrapper">
+      <div class="col-a">
+        <p>© 2026 Théo Dantas. <br> Todos os direitos reservados.</p>
+      </div>
+
+      <div class="col-b">
+        <ul class="social-links">
+          <li>
+            <a href="https://github.com/theodantas" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/theodantas" target="_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/theoodantas_" target="_blank" title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
