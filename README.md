@@ -8,7 +8,7 @@
 
 ## 📌 Sobre o Projeto
 
-Projeto feito no intuito de me apresentar como estudante de Ciência & Tecnologia (UFABC), com foco em Ciência de Dados.
+Este projeto é meu portfólio pessoal, criado para apresentar minha trajetória, projetos e conhecimentos na área de tecnologia, reunindo alguns dos trabalhos que desenvolvi ao longo da minha formação e dos meus estudos.
 
 ## 🛠 Tecnologias utilizadas:
 
