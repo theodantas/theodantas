@@ -8,7 +8,7 @@
 
 ## 📌 Sobre o Projeto
 
-Este projeto é meu portfólio pessoal, criado para apresentar minha trajetória, projetos e conhecimentos na área de tecnologia, reunindo alguns dos trabalhos que desenvolvi ao longo da minha formação e dos meus estudos.
+Este projeto é meu portfólio pessoal, criado para apresentar minha trajetória, projetos e conhecimentos na área de tecnologia, reunindo alguns dos trabalhos que desenvolvi ao longo da minha formação e dos meus estudos!
 
 ## 🛠 Tecnologias utilizadas:
 
