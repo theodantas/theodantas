@@ -23,13 +23,17 @@ O site foi construído com foco em performance e minimalismo. As tecnologias uti
 ## 📚 Alguns conceitos aplicados
 
 Neste projeto apliquei os seguintes pontos:
-'''
+
 ✔️ Semântica HTML;
+
 ✔️ Design Minimalista e Limpo;
+
 ✔️ Responsividade;
+
 ✔️ Organização com CSS Variables e Grid/Flexbox;
+
 ✔️ Estrutura focada em acessibilidade.
-'''
+
 ---
 
 <table align="center">
