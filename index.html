@@ -8,10 +8,16 @@
   <meta name="description"
     content="Portfólio de Théo Dantas — Process & Digital Transformation na Schneider Electric, com foco em automação, dados e agentes de IA." />
   <meta name="author" content="Théo Dantas" />
+  <meta name="theme-color" content="#060910" />
 
   <meta property="og:title" content="Théo Dantas | Portfólio" />
   <meta property="og:description" content="Projetos e trajetória em automação, dados e agentes de IA." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theodantas.com.br/" />
+  <meta property="og:image" content="https://theodantas.com.br/assets/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232f84d6'/%3E%3C/svg%3E">
@@ -23,12 +29,21 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/i18n.js" defer></script>
   <script src="./assets/js/main.js" defer></script>
 
   <title>Théo Dantas</title>
+
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 
 <body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <header>
     <nav id="navigation">
@@ -36,12 +51,22 @@
 
         <a class="logo" href="#home"><span>&lt;/&gt;</span> theodantas</a>
 
-        <ul class="nav-links">
-          <li><a href="#about">Sobre mim</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#knowledge">Stack</a></li>
-          <li><a href="#contact">Contato</a></li>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" data-i18n="nav.about">Sobre mim</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#knowledge" data-i18n="nav.stack">Stack</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contato</a></li>
         </ul>
+
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button>
+          <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+          <button type="button" data-lang="es" aria-label="Español" aria-pressed="false">ES</button>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
 
         <ul class="social-links">
           <li>
@@ -76,22 +101,90 @@
   <main>
 
     <section id="home" aria-labelledby="home-title">
+      <canvas id="hero-graph" aria-hidden="true"></canvas>
       <div class="wrapper">
         <div class="reveal from-left col-a">
-          <span class="eyebrow">Process &amp; Digital Transformation @ Schneider Electric</span>
-          <h1 id="home-title">Sou o Théo,<br /><span class="highlight">transformo tecnologia em eficiencia.</span></h1>
+          <h1 id="home-title" data-i18n="hero.title">Sou o Théo,<br /><span class="highlight">transformo tecnologia em eficiência.</span></h1>
           <p class="typing-row">
             <span class="typing"></span>
           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#projects">Ver projetos</a>
-            <a class="btn btn-ghost" href="./assets/curriculo-theo.pdf" target="_blank" download>Baixar currículo</a>
+            <a class="btn btn-primary" href="#projects" data-i18n="hero.cta1">Ver projetos</a>
+            <a class="btn btn-ghost" href="./assets/curriculo-theo.pdf" download data-i18n="hero.cta2" data-i18n-attr="href:cv.href">Baixar currículo</a>
           </div>
         </div>
 
         <div class="reveal from-right col-b">
           <div class="frame">
-            <img src="./assets/images/dados.gif" alt="Ilustração de análise de dados" />
+            <div class="bot-stage">
+            <div class="bot-bubble" role="status" aria-live="polite"></div>
+            <button class="bot" id="bot" type="button" data-i18n-attr="aria-label:bot.aria" aria-label="Mascote do Théo: clique para ele reagir">
+              <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="bot-head-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#22395a" />
+                    <stop offset="1" stop-color="#0f1b2c" />
+                  </linearGradient>
+                  <linearGradient id="bot-body-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1b2f4d" />
+                    <stop offset="1" stop-color="#0c1624" />
+                  </linearGradient>
+                </defs>
+
+                <ellipse class="bot-shadow" cx="200" cy="424" rx="92" ry="11" fill="#000" opacity="0.4" />
+
+                <g class="bot-float">
+                  <rect x="152" y="358" width="30" height="48" rx="12" fill="#143453" />
+                  <rect x="218" y="358" width="30" height="48" rx="12" fill="#143453" />
+                  <rect x="140" y="396" width="52" height="20" rx="10" fill="#2f84d6" />
+                  <rect x="208" y="396" width="52" height="20" rx="10" fill="#2f84d6" />
+
+                  <rect x="92" y="268" width="26" height="86" rx="13" fill="url(#bot-body-grad)" stroke="#2f84d6" stroke-opacity="0.45" stroke-width="2" />
+                  <rect class="arm-r" x="282" y="268" width="26" height="86" rx="13" fill="url(#bot-body-grad)" stroke="#2f84d6" stroke-opacity="0.45" stroke-width="2" />
+
+                  <rect x="118" y="248" width="164" height="122" rx="32" fill="url(#bot-body-grad)" stroke="#6ab8ff" stroke-opacity="0.35" stroke-width="2" />
+                  <rect x="148" y="272" width="104" height="66" rx="12" fill="#050a12" />
+                  <rect class="bar b1" x="162" y="294" width="14" height="34" rx="3" fill="#2f84d6" />
+                  <rect class="bar b2" x="184" y="282" width="14" height="46" rx="3" fill="#6ab8ff" />
+                  <rect class="bar b3" x="206" y="300" width="14" height="28" rx="3" fill="#2f84d6" />
+                  <rect class="bar b4" x="228" y="288" width="14" height="40" rx="3" fill="#6ab8ff" />
+                  <circle cx="172" cy="352" r="4" fill="#6ab8ff" />
+                  <circle cx="200" cy="352" r="4" fill="#2f84d6" />
+                  <circle cx="228" cy="352" r="4" fill="#143453" />
+
+                  <g id="bot-head">
+                    <line x1="200" y1="92" x2="200" y2="62" stroke="#2f84d6" stroke-width="5" stroke-linecap="round" />
+                    <circle class="antenna-ball" cx="200" cy="52" r="10" fill="#6ab8ff" />
+                    <circle cx="86" cy="165" r="16" fill="#143453" stroke="#2f84d6" stroke-opacity="0.5" stroke-width="2" />
+                    <circle cx="314" cy="165" r="16" fill="#143453" stroke="#2f84d6" stroke-opacity="0.5" stroke-width="2" />
+                    <rect x="92" y="90" width="216" height="150" rx="50" fill="url(#bot-head-grad)" stroke="#6ab8ff" stroke-opacity="0.4" stroke-width="2" />
+                    <rect x="114" y="112" width="172" height="104" rx="36" fill="#050a12" />
+
+                    <ellipse class="sclera" cx="162" cy="160" rx="25" ry="27" fill="#eaf4ff" />
+                    <g class="pupil">
+                      <circle cx="162" cy="160" r="12" fill="#2f84d6" />
+                      <circle cx="162" cy="160" r="5.5" fill="#050a12" />
+                      <circle cx="166" cy="155" r="3.5" fill="#fff" />
+                    </g>
+                    <rect class="lid" x="136" y="132" width="52" height="56" fill="#050a12" />
+
+                    <ellipse class="sclera" cx="238" cy="160" rx="25" ry="27" fill="#eaf4ff" />
+                    <g class="pupil">
+                      <circle cx="238" cy="160" r="12" fill="#2f84d6" />
+                      <circle cx="238" cy="160" r="5.5" fill="#050a12" />
+                      <circle cx="242" cy="155" r="3.5" fill="#fff" />
+                    </g>
+                    <rect class="lid" x="212" y="132" width="52" height="56" fill="#050a12" />
+
+                    <path class="mouth mouth-idle" d="M184 203 Q200 208 216 203" fill="none" stroke="#6ab8ff" stroke-width="4" stroke-linecap="round" />
+                    <path class="mouth mouth-happy" d="M176 198 Q200 217 224 198" fill="none" stroke="#6ab8ff" stroke-width="4" stroke-linecap="round" />
+                    <circle class="cheek" cx="136" cy="196" r="7" fill="#6ab8ff" />
+                    <circle class="cheek" cx="264" cy="196" r="7" fill="#6ab8ff" />
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
           </div>
         </div>
       </div>
@@ -101,47 +194,40 @@
       <div class="wrapper">
         <div class="reveal from-left col-b">
           <div class="photo-frame">
-            <img src="./assets/images/theo.png" alt="Foto de Théo Dantas, sem fundo" loading="lazy" />
+            <div class="photo-3d" id="photo-3d">
+              <div class="p-back"></div>
+              <div class="p-ring"></div>
+              <div class="p-floor"></div>
+              <img class="p-photo" decoding="async" src="./assets/images/theo.webp" data-i18n-attr="alt:alt.photo" alt="Foto de Théo Dantas, sem fundo" loading="lazy" />
+              <div class="p-orbit" aria-hidden="true">
+                <span class="p-chip"><img src="./assets/images/python.webp" alt="" /></span>
+                <span class="p-chip"><img src="./assets/images/agents.webp" alt="" /></span>
+                <span class="p-chip"><img src="./assets/images/mysql.webp" alt="" /></span>
+                <span class="p-chip"><img src="./assets/images/powerautomate.webp" alt="" /></span>
+                <span class="p-chip"><img src="./assets/images/js.webp" alt="" /></span>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="reveal from-right col-a">
-          <span class="eyebrow">Sobre mim</span>
-          <h2 id="about-title">Transformando problemas em soluções digitais</h2>
+          <h2 id="about-title" data-i18n="about.title">Transformando problemas em soluções digitais</h2>
           <div class="content">
-            <p>
+            <p data-i18n="about.p1">
               Acredito que a tecnologia atinge seu verdadeiro potencial quando resolve problemas reais e elimina o
               trabalho mecânico.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               Sou graduando em Ciência e Tecnologia na UFABC e atuo com Transformação Digital na Schneider Electric. Meu
               foco no dia a dia não é apenas utilizar ferramentas, mas entender a raiz de gargalos operacionais e
               solucioná-los através de automação.
             </p>
-            <p>
-              Minha base técnica em Python e SQL se soma à visão corporativa de quem entende que todo processo pode — e
-              deve — ser otimizado. Este portfólio é o registro prático dessa visão.
+            <p data-i18n="about.p3">
+              Minha base técnica em Python e SQL se soma à visão corporativa de quem entende que todo processo pode e
+              deve ser otimizado. Este portfólio é o registro prático dessa visão.
             </p>
           </div>
 
-          <dl class="fact-grid">
-            <div>
-              <dt>Atualmente</dt>
-              <dd>Process &amp; Digital Transformation — Schneider Electric</dd>
-            </div>
-            <div>
-              <dt>Formação</dt>
-              <dd>Ciência &amp; Tecnologia — UFABC</dd>
-            </div>
-            <div>
-              <dt>Foco</dt>
-              <dd>Python, SQL, Automação de Processos e IA</dd>
-            </div>
-            <div>
-              <dt>Local</dt>
-              <dd>São Paulo, SP</dd>
-            </div>
-          </dl>
         </div>
       </div>
     </section>
@@ -149,8 +235,7 @@
     <section id="projects" aria-labelledby="projects-title">
       <div class="wrapper">
         <div class="section-header reveal from-bottom">
-          <span class="eyebrow">Projetos</span>
-          <h2 id="projects-title">Tecnologia na prática</h2>
+          <h2 id="projects-title" data-i18n="projects.title">Tecnologia na prática</h2>
         </div>
 
         <div class="cards reveal from-bottom">
@@ -166,7 +251,7 @@
                   </svg>
                 </a>
                 <a href="https://theodantas.github.io/grafos" target="_blank" class="social-circle"
-                  title="Ver Projeto">
+                  title="Ver Projeto" data-i18n-attr="title:proj.view">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -175,12 +260,12 @@
                   </svg>
                 </a>
               </div>
-              <img src="./assets/images/grafos.gif" alt="Capa do Projeto de Analise de Grafos"
+              <img src="./assets/images/grafos.webp" loading="lazy" decoding="async" data-i18n-attr="alt:alt.grafos" alt="Capa do Projeto de Analise de Grafos"
                 onerror="this.closest('.project-image').style.background='var(--surface)'; this.remove();">
             </div>
             <div class="project-body">
-              <h3>Análise de Grafos</h3>
-              <p>Análise da rede de relações entre jogadores da Seleção Brasileira a partir dos clubes que compartilharam ao longo das gerações.</p>
+              <h3 data-i18n="proj.t.grafos">Análise de Grafos</h3>
+              <p data-i18n="proj.grafos">Análise da rede de relações entre jogadores da Seleção Brasileira a partir dos clubes que compartilharam ao longo das gerações.</p>
               <span class="techs">Python • NetworkX • Gephi • D3.js</span>
             </div>
           </article>
@@ -196,7 +281,7 @@
                   </svg>
                 </a>
                 <a href="https://theodantas.github.io/protech-health" target="_blank" class="social-circle"
-                  title="Ver Projeto">
+                  title="Ver Projeto" data-i18n-attr="title:proj.view">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -205,12 +290,12 @@
                   </svg>
                 </a>
               </div>
-              <img src="./assets/images/protechhealth.gif" alt="Capa do Projeto Protech Health"
+              <img src="./assets/images/protechhealth.webp" loading="lazy" decoding="async" data-i18n-attr="alt:alt.protech" alt="Capa do Projeto Protech Health"
                 onerror="this.closest('.project-image').style.background='var(--surface)'; this.remove();">
             </div>
             <div class="project-body">
               <h3>ProTech Health</h3>
-              <p>Aplicação web voltada à segurança alimentar, desenvolvida para auxiliar pessoas com alergias, intolerâncias e restrições alimentares.</p>
+              <p data-i18n="proj.protech">Aplicação web voltada à segurança alimentar, desenvolvida para auxiliar pessoas com alergias, intolerâncias e restrições alimentares.</p>
               <span class="techs">HTML · CSS · JS</span>
             </div>
           </article>
@@ -224,7 +309,7 @@
                       d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                   </svg>
                 </a>
-                <a href="https://blendlang.onrender.com" target="_blank" class="social-circle" title="Ver Projeto">
+                <a href="https://blendlang.onrender.com" target="_blank" class="social-circle" title="Ver Projeto" data-i18n-attr="title:proj.view">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -233,11 +318,11 @@
                   </svg>
                 </a>
               </div>
-              <img src="./assets/images/blendlang.gif" alt="Capa do Projeto BlendLang">
+              <img src="./assets/images/blendlang.webp" loading="lazy" decoding="async" data-i18n-attr="alt:alt.blendlang" alt="Capa do Projeto BlendLang">
             </div>
             <div class="project-body">
               <h3>BlendLang</h3>
-              <p>Aplicação web para aprendizado de inglês que combina frases em português e inglês de acordo com diferentes níveis e categorias.</p>
+              <p data-i18n="proj.blendlang">Aplicação web para aprendizado de inglês que combina frases em português e inglês de acordo com diferentes níveis e categorias.</p>
               <span class="techs">Python · Flask · Google Sheets API</span>
             </div>
           </article>
@@ -251,7 +336,7 @@
                       d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                   </svg>
                 </a>
-                <a href="https://dantaselevadores.com.br" target="_blank" class="social-circle" title="Ver Projeto">
+                <a href="https://dantaselevadores.com.br" target="_blank" class="social-circle" title="Ver Projeto" data-i18n-attr="title:proj.view">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -260,11 +345,11 @@
                   </svg>
                 </a>
               </div>
-              <img src="./assets/images/dantaselevadores.gif" alt="Capa do Projeto Dantas Elevadores">
+              <img src="./assets/images/dantaselevadores.webp" loading="lazy" decoding="async" data-i18n-attr="alt:alt.elevadores" alt="Capa do Projeto Dantas Elevadores">
             </div>
             <div class="project-body">
               <h3>Dantas Elevadores</h3>
-              <p>Site institucional desenvolvido para consolidar a presença digital da empresa, com foco em apresentar serviços e facilitar a captação de clientes.</p>
+              <p data-i18n="proj.elevadores">Site institucional desenvolvido para consolidar a presença digital da empresa, com foco em apresentar serviços e facilitar a captação de clientes.</p>
               <span class="techs">HTML · CSS · JS</span>
             </div>
           </article>
@@ -278,7 +363,7 @@
                       d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                   </svg>
                 </a>
-                <a href="https://theodantas.com.br" target="_blank" class="social-circle" title="Ver Projeto">
+                <a href="https://theodantas.com.br" target="_blank" class="social-circle" title="Ver Projeto" data-i18n-attr="title:proj.view">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -287,11 +372,11 @@
                   </svg>
                 </a>
               </div>
-              <img src="./assets/images/preview.gif" alt="Capa de Portfólio">
+              <img src="./assets/images/preview.webp" loading="lazy" decoding="async" data-i18n-attr="alt:alt.portfolio" alt="Capa de Portfólio">
             </div>
             <div class="project-body">
               <h3>Portfólio</h3>
-              <p>Meu portfólio profissional, desenvolvido para apresentar minha trajetória, projetos e conhecimentos em tecnologia.</p>
+              <p data-i18n="proj.portfolio">Meu portfólio profissional, desenvolvido para apresentar minha trajetória, projetos e conhecimentos em tecnologia.</p>
               <span class="techs">HTML · CSS · JS</span>
             </div>
           </article>
@@ -304,78 +389,77 @@
     <section id="knowledge">
       <div class="wrapper">
         <div class="section-header reveal from-top">
-          <span class="eyebrow">Stack</span>
-          <h2 id="knowledge-title">Ferramentas que geram eficiência</h2>
+          <h2 id="knowledge-title" data-i18n="stack.title">Ferramentas que geram eficiência</h2>
         </div>
 
         <div class="reveal from-bottom">
           <div class="table-head">
             <span></span>
-            <span>Tecnologia</span>
-            <span>Aplicação</span>
+            <span data-i18n="stack.tech">Tecnologia</span>
+            <span data-i18n="stack.app">Aplicação</span>
           </div>
           <div class="rows">
 
             <article class="row">
-              <img class="icon" src="./assets/images/agents.png" alt="Agentes de IA." />
-              <h3>Agentes de IA</h3>
-              <p>Desenvolvimento de agentes inteligentes que não apenas respondem a perguntas, mas interpretam contextos
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/agents.webp" data-i18n-attr="alt:alt.agents" alt="Agentes de IA." />
+              <h3 data-i18n="stack.t.agents">Agentes de IA</h3>
+              <p data-i18n="stack.agents">Desenvolvimento de agentes inteligentes que não apenas respondem a perguntas, mas interpretam contextos
                 operacionais e executam tarefas autônomas.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/foundry.png" alt="Logo do Azure AI Foundry." />
-              <h3>Azure AI Foundry</h3>
-              <p>Ambiente em nuvem da Microsoft utilizado para desenvolver, testar e integrar soluções de inteligência
-                artificial</p>
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/foundry.webp" data-i18n-attr="alt:alt.foundry" alt="Logo do Microsoft AI Foundry." />
+              <h3>Microsoft AI Foundry</h3>
+              <p data-i18n="stack.foundry">Ambiente em nuvem da Microsoft utilizado para desenvolver, testar e integrar soluções de inteligência
+                artificial.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/python.png" alt="Logo do Python." />
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/python.webp" data-i18n-attr="alt:alt.python" alt="Logo do Python." />
               <h3>Python</h3>
-              <p>Linguagem principal para automações, análise de dados e integração com agentes de IA, apoiada por um
+              <p data-i18n="stack.python">Linguagem principal para automações, análise de dados e integração com agentes de IA, apoiada por um
                 grande ecossistema de bibliotecas.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/mysql.png" alt="Logo do MySQL." />
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/mysql.webp" data-i18n-attr="alt:alt.sql" alt="Logo do MySQL." />
               <h3>SQL &amp; MySQL</h3>
-              <p>Consulta, estruturação e modelagem de dados em bancos relacionais para apoiar análises e processos de
+              <p data-i18n="stack.sql">Consulta, estruturação e modelagem de dados em bancos relacionais para apoiar análises e processos de
                 decisão.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/automation.png" alt="Automação de processos." />
-              <h3>Automação de processos</h3>
-              <p>Visão analítica para mapear gargalos operacionais e desenhar fluxos eficientes antes de aplicar
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/automation.webp" data-i18n-attr="alt:alt.automation" alt="Automação de processos." />
+              <h3 data-i18n="stack.t.automation">Automação de processos</h3>
+              <p data-i18n="stack.automation">Visão analítica para mapear gargalos operacionais e desenhar fluxos eficientes antes de aplicar
                 qualquer tecnologia.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/powerautomate.png" alt="Logo do Power Automate." />
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/powerautomate.webp" data-i18n-attr="alt:alt.powerautomate" alt="Logo do Power Automate." />
               <h3>Power Automate</h3>
-              <p>Criação de fluxos automatizados (RPA e DPA) no ecossistema Microsoft para conectar aplicativos,
+              <p data-i18n="stack.powerautomate">Criação de fluxos automatizados (RPA e DPA) no ecossistema Microsoft para conectar aplicativos,
                 sincronizar dados e eliminar o trabalho manual repetitivo.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/html.png" alt="Logo do HTML5." />
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/html.webp" data-i18n-attr="alt:alt.html" alt="Logo do HTML5." />
               <h3>HTML5</h3>
-              <p>Estruturação semântica de páginas e aplicações web, garantindo organização clara das informações e
+              <p data-i18n="stack.html">Estruturação semântica de páginas e aplicações web, garantindo organização clara das informações e
                 acessibilidade.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/css.png" alt="Logo do CSS3." />
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/css.webp" data-i18n-attr="alt:alt.css" alt="Logo do CSS3." />
               <h3>CSS3</h3>
-              <p>Estilização avançada e design responsivo para criar interfaces modernas, polidas e adaptáveis a
+              <p data-i18n="stack.css">Estilização avançada e design responsivo para criar interfaces modernas, polidas e adaptáveis a
                 qualquer tela.</p>
             </article>
 
             <article class="row">
-              <img class="icon" src="./assets/images/js.png" alt="Logo do Javascript." />
+              <img class="icon" width="36" height="36" loading="lazy" decoding="async" src="./assets/images/js.webp" data-i18n-attr="alt:alt.js" alt="Logo do Javascript." />
               <h3>JavaScript</h3>
-              <p>Construção de lógicas no front-end para adicionar interatividade, validar dados e consumir APIs de
+              <p data-i18n="stack.js">Construção de lógicas no front-end para adicionar interatividade, validar dados e consumir APIs de
                 forma dinâmica.</p>
             </article>
 
@@ -387,10 +471,9 @@
     <section id="contact" aria-labelledby="contact-title">
       <div class="wrapper reveal from-top">
         <div class="section-header">
-          <span class="eyebrow">Contato</span>
-          <h2 id="contact-title">Fale comigo</h2>
+          <h2 id="contact-title" data-i18n="contact.title">Fale comigo</h2>
         </div>
-        <p class="lead">Seja para discutir sobre otimização de processos, explorar o uso prático de IA ou trocar
+        <p class="lead" data-i18n="contact.lead">Seja para discutir sobre otimização de processos, explorar o uso prático de IA ou trocar
           experiências na área de dados, fique à vontade para me mandar uma mensagem. Vamos conversar!</p>
 
         <div class="contact-content">
@@ -398,7 +481,7 @@
             theoalvesdantas2@gmail.com
           </a>
 
-          <a class="btn btn-ghost" target="_blank" href="./assets/curriculo-theo.pdf" download>
+          <a class="btn btn-ghost" href="./assets/curriculo-theo.pdf" download data-i18n="contact.cv" data-i18n-attr="href:cv.href">
             Baixe meu currículo
           </a>
         </div>
@@ -410,7 +493,7 @@
   <footer id="footer">
     <div class="wrapper">
       <div class="col-a">
-        <p>© 2026 Théo Dantas. Todos os direitos reservados.</p>
+        <p data-i18n="footer.rights">© 2026 Théo Dantas. Todos os direitos reservados.</p>
       </div>
 
       <div class="col-b">
